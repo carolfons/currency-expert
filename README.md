@@ -1,5 +1,5 @@
 # Currency-Expert 🪙
-Coinverter is a Python-based currency converter designed to help users quickly convert between different currencies using real-time exchange rates. This project fetches up-to-date rates from a reliable API, providing a smooth and intuitive experience for users looking to convert currencies on the go.
+Currency-Expert is a Python-based currency converter designed to help users quickly convert between different currencies using real-time exchange rates. This project fetches up-to-date rates from a reliable API, providing a smooth and intuitive experience for users looking to convert currencies on the go.
 
 ## Features
 <p> 🔄 <strong>Real-time Currency Conversion:</strong> Get up-to-date exchange rates for a wide range of currencies.</p>
