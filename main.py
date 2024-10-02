@@ -1,5 +1,6 @@
 import customtkinter
 from search_currency import currency_name, available_exchange
+from exchange_rate import convert_currency
 
 
 #customização de cores
@@ -28,11 +29,20 @@ campo_moeda_origem = customtkinter.CTkOptionMenu(janela, values=list(dic_convers
 campo_moeda_destino = customtkinter.CTkOptionMenu(janela, values=["Selecione uma moeda de origem"])
 
 def coin_converter():
-    print("Converter Moeda")
+    exchange_start = campo_moeda_origem.get()
+    exchange_end = campo_moeda_destino.get()
+    
+    #garantindo que existem valores nas variáveis
+    if exchange_start and exchange_end:
+        currency = convert_currency(exchange_start,exchange_end)
+        text_currency_rate.configure(text=f"1 {exchange_start} = {currency}{exchange_end}")
 
 btn_convert = customtkinter.CTkButton(janela, text="Converter", command=coin_converter)
 
 lista_moedas = customtkinter.CTkScrollableFrame(janela)
+
+text_currency_rate = customtkinter.CTkLabel(janela, text="")
+
 available_currency = currency_name()
 
 for codigo_moeda in available_currency:
@@ -47,6 +57,7 @@ campo_moeda_origem.pack(padx=10)
 lbl_moeda_destino.pack(padx=10,pady=3)
 campo_moeda_destino.pack(padx=10)
 btn_convert.pack(padx=10,pady=20)
+text_currency_rate.pack(padx=10,pady=10)
 lista_moedas.pack(padx=10, pady=10)
 
 
